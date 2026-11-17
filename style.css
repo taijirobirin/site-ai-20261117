@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Stick&display=swap');
+
+
+/* ============================================================
+   第8回 小課題②：トップページ（スターター）
+   ★のところが、自分で決める場所です。
+   骨組み（並べ方・スマホ対応）は、先に入れてあります。
+   ============================================================ */
+
+/* ---- 1. 色：まず、ここを決める（授業の「配色」の項） ---- */
+:root {
+  --base: #faf6ee;
+  --base-sub: #eae3da;
+  --main: #5a3a2a;
+  --accent: #e0a030;
+  --text: #2b2118;
+}
+/* ---- 余白：決めた大きさだけを使う（★大きさは、変えてよい）。上の「色」の :root とは、別のブロック ---- */
+:root {
+  --s1: .5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 3rem;
+  --s5: 5rem;
+}
+
+/* ---- 2. 全体の土台 ---- */
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  /* ★font-family：優先順に並べて、最後に sans-serif か serif */
+  /* ★font-size、line-height（行の間隔）も、ここで決める */
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--base);
+}
+
+/* ★見出しだけ、別のフォントにするなら、ここ */
+/* h1, h2, h3, .logo { font-family: ...; } */
+h1 {
+  font-family: "Stick", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:  2rem;
+  line-height: 1.5;
+}
+h2 {
+  font-size:  1.5rem;
+}
+h3 {
+  font-size:  1.25rem;
+}
+
+/* ---- 3. 中身の幅：最大960pxで、中央に ---- */
+.inner { max-width: 960px; margin: 0 auto; }
+.site-header, main > section, footer { padding-left: var(--s3); padding-right: var(--s3); }
+
+/* ---- 4. ヘッダー ---- */
+.site-header { padding-top: var(--s2); padding-bottom: var(--s2); border-bottom: 1px solid var(--base-sub); }
+.site-header .inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s1) var(--s3); }
+.logo { color: var(--main); font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+.site-header nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s3); }
+.site-header nav a { color: var(--text); text-decoration: none; }
+.site-header nav a:hover { text-decoration: underline; }
+
+/* ---- 5. 最初の画面 ---- */
+.hero { background-color: var(--main); color: var(--base); padding-top: var(--s4); padding-bottom: var(--s4); }
+.hero h1 { font-size: 2rem; margin-bottom: var(--s2); }   /* ★文字の大きさ：見出しの階層をつける */
+.hero p { margin-bottom: var(--s3); }
+.btn { display: inline-block; background-color: var(--accent); color: var(--text); font-weight: 700; padding: .8rem 1.6rem; border-radius: 6px; text-decoration: none; }
+.btn:hover { filter: brightness(1.08); }
+
+/* ---- 6. 各セクション ---- */
+.features, .story, .info { padding-top: var(--s4); padding-bottom: var(--s4); }   /* ★セクションの間の余白 */
+.features h2, .story h2, .info h2 { font-size: 1.5rem; color: var(--main); margin-bottom: var(--s3); }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); }
+.card { background-color: var(--base-sub); border-radius: 8px; padding: var(--s3); }
+.card h3 { color: var(--main); margin-bottom: var(--s1); }
+
+.story { background-color: var(--base-sub); }
+.story p { max-width: 36em; margin-bottom: var(--s2); }   /* 1行の長さを、短くする */
+
+.info dl { display: grid; grid-template-columns: 7em 1fr; gap: var(--s1) var(--s2); margin-bottom: var(--s3); }
+.info dt { font-weight: 700; color: var(--main); }
+
+footer { background-color: var(--text); color: var(--base); font-size: .85rem; padding-top: var(--s3); padding-bottom: var(--s3); }
+
+/* ---- 7. スマホ：1列に（★自分のページに合わせて、確かめる・直す） ---- */
+@media (max-width: 700px) {
+  .cards { grid-template-columns: 1fr; }
+  .info dl { grid-template-columns: 1fr; gap: 0; }
+  .info dd { margin-bottom: var(--s2); }
+  /* ★メニューが、スマホで、窮屈なときは、ここで直す */
+}
+
+
+/* ボタンにマウスを乗せたら、少し色を変える */
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+
