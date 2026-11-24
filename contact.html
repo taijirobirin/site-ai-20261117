@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>山本珈琲｜築200年の古民家でくつろぎの珈琲時間を</title>
+  <!-- ★フォントを Google Fonts から使うときは、ここに <link> を足す（授業の「文字」の項を見る） -->
+  <link rel="stylesheet" href="style.css">
+  <script src="contact.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">山本珈琲</a>
+      <nav>
+        <ul>
+          <li><a href="index.html#features">メニュー1</a></li>
+          <li><a href="index.html#about">メニュー2</a></li>
+          <li><a href="index.html#access">メニュー3</a></li>
+          <li><a href="index.html#features">メニュー4</a></li>
+          <li><a href="index.html#access">メニュー5</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="inner">
+      <h1>お問い合わせ</h1>
+      <form novalidate>
+        <p>
+          <label for="name">お名前（必須）</label>
+          <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" required>
+          <span id="name-error" style="display: block; color: var(--error)"></span>
+        </p>
+        <p>
+          <label for="email">メールアドレス（必須）</label>
+          <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+          <span id="email-error" style="display: block; color: var(--error)"></span>
+        </p>
+        <p>
+          <label for="subject">ご用件</label>
+          <select id="subject" name="subject" autocomplete="off">
+            <option value="reservation">席の予約</option>
+            <option value="question">お店への質問</option>
+            <option value="other">その他</option>
+          </select>
+        </p>
+        <p>
+          <label for="message">お問い合わせの内容（必須・10文字以上500文字まで）</label>
+          <textarea id="message" name="message" autocomplete="off" minlength="10" maxlength="500" aria-describedby="message-error" required></textarea>
+          <span id="message-error" style="display: block; color: var(--error)"></span>
+        </p>
+        <p>
+          <input type="checkbox" id="consent" name="consent" autocomplete="off" aria-describedby="consent-error" required>
+          <label for="consent">お問い合わせ内容の送信に同意する（必須）</label>
+          <span id="consent-error" style="display: block; color: var(--error)"></span>
+        </p>
+        <button type="submit">送信</button>
+      </form>
+      <section id="confirmation" aria-live="polite" hidden>
+        <h2>入力内容の確認</h2>
+        <p>送信はされていません。</p>
+        <dl>
+          <dt>お名前</dt><dd id="confirm-name" style="overflow-wrap: anywhere"></dd>
+          <dt>メールアドレス</dt><dd id="confirm-email" style="overflow-wrap: anywhere"></dd>
+          <dt>ご用件</dt><dd id="confirm-subject"></dd>
+          <dt>お問い合わせの内容</dt><dd id="confirm-message" style="white-space: pre-wrap; overflow-wrap: anywhere"></dd>
+          <dt>同意</dt><dd id="confirm-consent"></dd>
+        </dl>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p>© 2026 サイト名</p>
+    </div>
+  </footer>
+</body>
+</html>

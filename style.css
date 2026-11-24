@@ -102,4 +102,82 @@ footer { background-color: var(--text); color: var(--base); font-size: .85rem; p
   filter: brightness(1.08);
 }
 
+:root {
+  --error: darkred;
+}
+
+main > .inner {
+  padding: var(--s4) var(--s3);
+}
+
+main > .inner h1 {
+  margin-bottom: var(--s3);
+}
+
+main > .inner form {
+  max-width: 40rem;
+}
+
+main > .inner form p {
+  margin-bottom: var(--s3);
+}
+
+main > .inner form label {
+  display: block;
+  margin-bottom: var(--s1);
+  overflow-wrap: anywhere;
+}
+
+main > .inner form input:not([type="checkbox"]),
+main > .inner form select,
+main > .inner form textarea {
+  display: block;
+  width: 100%;
+  padding: var(--s1);
+  border: 2px solid var(--main);
+  border-radius: 6px;
+  background-color: var(--base);
+  color: var(--text);
+  font: inherit;
+}
+
+main > .inner form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+main > .inner form input[type="checkbox"] {
+  accent-color: var(--main);
+}
+
+main > .inner form input[type="checkbox"] + label {
+  display: inline;
+}
+
+main > .inner form input:not([type="checkbox"]):user-invalid,
+main > .inner form select:user-invalid,
+main > .inner form textarea:user-invalid {
+  border-color: var(--error);
+}
+
+main > .inner form input[type="checkbox"]:user-invalid {
+  accent-color: var(--error);
+  outline: 2px solid var(--error);
+}
+
+main > .inner form button {
+  padding: var(--s1) var(--s3);
+  border: 2px solid var(--main);
+  border-radius: 6px;
+  background-color: var(--main);
+  color: var(--base);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main > .inner form :focus-visible {
+  outline: 3px solid var(--main);
+  outline-offset: 2px;
+}
 
